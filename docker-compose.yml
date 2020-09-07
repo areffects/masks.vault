@@ -20,4 +20,4 @@ services:
       - VAULT_DEV_ROOT_TOKEN_ID=myroot
     cap_add:
       - IPC_LOCK
-    command: vault server -config=/config/vault.hcl
+    command: vault server -config=/vault/config/vault.hcl
