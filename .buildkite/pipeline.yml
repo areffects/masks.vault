@@ -1,0 +1,4 @@
+steps:
+  - label: 'build & run nginx'
+    command:
+      - "docker-compose up -d --build nginx"      

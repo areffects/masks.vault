@@ -1,0 +1,23 @@
+version: "3"
+
+services:
+  vault:
+    container_name: vault
+    build:
+      context: ./
+      dockerfile: ./Dockerfile
+    volumes:
+      - ./config:/vault/config
+      - ./policies:/vault/policies
+      - ./data:/vault/data
+    ports:
+      - 4010:4010
+    environment:
+      - VAULT_ADDR=http://0.0.0.0:4010
+      - VAULT_API_ADDR=http://0.0.0.0:4010
+      - VAULT_ADDRESS=http://0.0.0.0:4010
+      - VAULT_DEV_LISTEN_ADDRESS=http://0.0.0.0:4010
+      - VAULT_DEV_ROOT_TOKEN_ID=myroot
+    cap_add:
+      - IPC_LOCK
+    command: vault server -config=/config/vault.hcl
