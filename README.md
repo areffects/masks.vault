@@ -1,2 +1,3 @@
-# masks-vault
+# Masks Vault
+
 Manage Secrets and Protect Sensitive Data
